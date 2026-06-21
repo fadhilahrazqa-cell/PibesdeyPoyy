@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday, Apipp ❤️</title>
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --pink: #FF2D55;
+      --pink-lt: #FFB3C1;
+      --cream: #FFF5F7;
+      --black: #111111;
+      --white: #FFFFFF;
+      --gray-dk: #666666;
+      --gray-md: #888888;
+      --border: 4px solid #111111;
+      --shadow: 6px 6px 0 #111111;
+      --shadow-lg: 8px 8px 0 #111111;
+      --radius: 12px;
+      --font-display: 'Georgia', 'Times New Roman', serif;
+      --font-body: 'Trebuchet MS', 'Segoe UI', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--black);
+      font-family: var(--font-body);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* UTILITY */
+    .neo-card {
+      background: var(--white);
+      border: var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .neo-btn {
+      display: inline-block;
+      padding: 14px 32px;
+      background: var(--pink);
+      color: var(--white);
+      border: var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      font-weight: 800;
+      font-size: 1rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform .12s, box-shadow .12s;
+      letter-spacing: .03em;
+      text-align: center;
+    }
+
+    .neo-btn:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 8px 8px 0 #111;
+    }
+
+    .neo-btn:active {
+      transform: translate(4px, 4px);
+      box-shadow: 2px 2px 0 #111;
+    }
+
+    .neo-btn.white {
+      background: var(--white);
+      color: var(--black);
+    }
+
+    section {
+      padding: 80px 20px;
+    }
+
+    .section-label {
+      display: inline-block;
+      background: var(--black);
+      color: var(--white);
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 4px;
+      margin-bottom: 16px;
+    }
+
+    h2.section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.1;
+      margin-bottom: 40px;
+    }
+
+    /* FLOATING HEARTS */
+    #hearts-bg {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .fheart {
+      position: absolute;
+      bottom: -80px;
+      font-size: 1.4rem;
+      opacity: .18;
+      animation: floatUp linear infinite;
+      user-select: none;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) rotate(-10deg) scale(1);
+        opacity: .18;
+      }
+
+      50% {
+        opacity: .28;
+      }
+
+      100% {
+        transform: translateY(-110vh) rotate(15deg) scale(1.2);
+        opacity: 0;
+      }
+    }
+
+    /* HERO */
+    #hero {
+      min-height: 100vh;
+      background: var(--cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      padding: 100px 20px 60px;
+    }
+
+    .hero-deco {
+      position: absolute;
+      font-size: 3rem;
+      opacity: .35;
+      user-select: none;
+      pointer-events: none;
+      animation: wobble 3s ease-in-out infinite;
+    }
+
+    @keyframes wobble {
+
+      0%,
+      100% {
+        transform: rotate(-8deg) scale(1);
+      }
+
+      50% {
+        transform: rotate(8deg) scale(1.12);
+      }
+    }
+
+    .hero-box {
+      position: relative;
+      z-index: 2;
+      max-width: 760px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .hero-eyebrow {
+      display: inline-block;
+      background: var(--pink-lt);
+      border: var(--border);
+      border-radius: 999px;
+      padding: 6px 20px;
+      font-size: .85rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+      box-shadow: 3px 3px 0 #111;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.6rem, 8vw, 5.5rem);
+      font-weight: 900;
+      line-height: 1.05;
+      color: var(--black);
+      margin-bottom: 20px;
+    }
+
+    .hero-title span {
+      color: var(--pink);
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      color: var(--gray-dk);
+      max-width: 520px;
+      margin: 0 auto 36px;
+      font-style: italic;
+    }
+
+    .hero-doodles {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .doodle {
+      position: absolute;
+    }
+
+    .deco-box {
+      position: absolute;
+      border: var(--border);
+      border-radius: 8px;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* =====================================================
+   SCRAPBOOK GALLERY — lucu versi baru
+   ===================================================== */
+    #gallery {
+      background: var(--pink);
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    #gallery h2.section-title {
+      color: var(--white);
+    }
+
+    #gallery .section-label {
+      background: var(--white);
+      color: var(--black);
+    }
+
+    /* wavy tape strip deco */
+    #gallery::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 18px;
+      background: repeating-linear-gradient(90deg, #FFB3C1 0, #FFB3C1 24px, #FF2D55 24px, #FF2D55 48px);
+      opacity: .5;
+    }
+
+    #gallery::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 18px;
+      background: repeating-linear-gradient(90deg, #FF2D55 0, #FF2D55 24px, #FFB3C1 24px, #FFB3C1 48px);
+      opacity: .5;
+    }
+
+    .scrapbook-wall {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      padding: 20px 0 40px;
+      position: relative;
+    }
+
+    /* Each polaroid */
+    .polaroid {
+      position: relative;
+      margin: 16px 12px;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    /* Tape strip on top */
+    .polaroid::before {
+      content: '';
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%) rotate(var(--tape-rot, 0deg));
+      width: 52px;
+      height: 22px;
+      background: rgba(255, 230, 80, .75);
+      border: 2px solid rgba(180, 160, 0, .3);
+      border-radius: 3px;
+      z-index: 10;
+      box-shadow: 1px 1px 0 rgba(0, 0, 0, .08);
+    }
+
+    .polaroid-inner {
+      background: var(--white);
+      border: 4px solid var(--black);
+      border-radius: 6px 6px 4px 4px;
+      box-shadow: 5px 5px 0 var(--black);
+      padding: 10px 10px 42px;
+      transform: rotate(var(--rot, 0deg));
+      transition: transform .2s cubic-bezier(.17, .67, .41, 1.6), box-shadow .2s;
+      position: relative;
+      will-change: transform;
+    }
+
+    .polaroid:hover .polaroid-inner {
+      transform: rotate(0deg) scale(1.07) translateY(-6px);
+      box-shadow: 9px 9px 0 var(--black);
+      z-index: 20;
+    }
+
+    .polaroid-img {
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      display: block;
+      border: 2px solid #eee;
+    }
+
+    /* caption strip */
+    .polaroid-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: .72rem;
+      font-style: italic;
+      color: var(--gray-dk);
+      letter-spacing: .02em;
+      text-align: center;
+      padding: 0 8px;
+    }
+
+    /* Sticker badge */
+    .polaroid-sticker {
+      position: absolute;
+      bottom: -12px;
+      right: -10px;
+      font-size: 1.6rem;
+      filter: drop-shadow(2px 2px 0 rgba(0, 0, 0, .25));
+      z-index: 11;
+      transform: rotate(12deg);
+      pointer-events: none;
+      animation: stickerBounce 2.5s ease-in-out infinite;
+      animation-delay: var(--sd, 0s);
+    }
+
+    @keyframes stickerBounce {
+
+      0%,
+      100% {
+        transform: rotate(12deg) scale(1);
+      }
+
+      50% {
+        transform: rotate(12deg) scale(1.18);
+      }
+    }
+
+    /* Photo number badge */
+    .polaroid-num {
+      position: absolute;
+      top: 6px;
+      left: 8px;
+      background: var(--pink);
+      color: var(--white);
+      border: 2px solid var(--black);
+      border-radius: 999px;
+      font-size: .6rem;
+      font-weight: 900;
+      padding: 1px 7px;
+      box-shadow: 2px 2px 0 #111;
+      z-index: 12;
+      letter-spacing: .04em;
+    }
+
+    /* Heart burst when clicked */
+    .heart-burst {
+      position: absolute;
+      pointer-events: none;
+      font-size: 1.5rem;
+      animation: heartPop .7s ease-out forwards;
+      z-index: 50;
+    }
+
+    @keyframes heartPop {
+      0% {
+        opacity: 1;
+        transform: scale(0) translateY(0);
+      }
+
+      60% {
+        opacity: 1;
+        transform: scale(1.4) translateY(-30px);
+      }
+
+      100% {
+        opacity: 0;
+        transform: scale(0.8) translateY(-60px);
+      }
+    }
+
+    /* Doodle overlays in gallery */
+    .gallery-doodle {
+      position: absolute;
+      font-size: 2.2rem;
+      opacity: .22;
+      pointer-events: none;
+      user-select: none;
+      animation: wobble 4s ease-in-out infinite;
+    }
+
+    /* =====================================================
+   LIGHTBOX
+   ===================================================== */
+    #lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(17, 17, 17, .85);
+      z-index: 9000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    #lightbox.open {
+      display: flex;
+    }
+
+    #lb-img {
+      max-width: min(90vw, 600px);
+      max-height: 75vh;
+      object-fit: contain;
+      border: 5px solid var(--white);
+      border-radius: 8px;
+      box-shadow: 0 0 0 4px var(--black), 12px 12px 0 var(--black);
+      animation: popIn .3s cubic-bezier(.17, .67, .41, 1.4);
+    }
+
+    #lb-caption {
+      color: var(--white);
+      font-style: italic;
+      font-family: var(--font-display);
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    #lb-close {
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      background: var(--pink);
+      color: var(--white);
+      border: 3px solid var(--white);
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      font-size: 1.3rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 3px 3px 0 var(--black);
+      transition: transform .1s;
+    }
+
+    #lb-close:hover {
+      transform: rotate(90deg);
+    }
+
+    #lb-nav {
+      display: flex;
+      gap: 12px;
+    }
+
+    #lb-prev,
+    #lb-next {
+      background: var(--white);
+      color: var(--black);
+      border: 3px solid var(--black);
+      border-radius: var(--radius);
+      padding: 8px 20px;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 4px 4px 0 var(--black);
+      transition: transform .1s, box-shadow .1s;
+      font-size: 1rem;
+    }
+
+    #lb-prev:hover,
+    #lb-next:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0 #111;
+    }
+
+    #lb-prev:active,
+    #lb-next:active {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0 #111;
+    }
+
+    #lb-counter {
+      color: var(--pink-lt);
+      font-size: .8rem;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    /* TIMELINE */
+    #timeline {
+      background: var(--cream);
+      position: relative;
+      z-index: 1;
+    }
+
+    .timeline-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .timeline-line {
+      position: absolute;
+      left: 32px;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: var(--black);
+      border-radius: 2px;
+    }
+
+    .tl-item {
+      display: flex;
+      gap: 24px;
+      margin-bottom: 36px;
+      align-items: flex-start;
+      opacity: 0;
+      transform: translateX(-30px);
+      transition: opacity .5s, transform .5s;
+    }
+
+    .tl-item.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .tl-dot {
+      flex: 0 0 64px;
+      height: 64px;
+      background: var(--pink);
+      border: var(--border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      box-shadow: var(--shadow);
+      z-index: 1;
+      position: relative;
+    }
+
+    .tl-card {
+      flex: 1;
+      padding: 20px 24px;
+      transition: transform .15s, box-shadow .15s;
+    }
+
+    .tl-card:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 10px 10px 0 #111;
+    }
+
+    .tl-date {
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--pink);
+      margin-bottom: 6px;
+    }
+
+    .tl-card h3 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    .tl-card p {
+      font-size: .9rem;
+      color: var(--gray-dk);
+    }
+
+    /* MESSAGE */
+    #message {
+      background: var(--pink-lt);
+      position: relative;
+      z-index: 1;
+    }
+
+    .message-card {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 44px;
+      background: var(--white);
+      position: relative;
+    }
+
+    .message-card::before {
+      content: '💌';
+      position: absolute;
+      top: -28px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 2.8rem;
+      filter: drop-shadow(2px 2px 0 #111);
+    }
+
+    .message-name {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      color: var(--pink);
+      font-style: italic;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .message-body {
+      font-size: 1.05rem;
+      line-height: 1.9;
+      color: var(--black);
+      white-space: pre-line;
+    }
+
+    .message-sign {
+      margin-top: 28px;
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--pink);
+      text-align: right;
+    }
+
+    .message-card.fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity .7s, transform .7s;
+    }
+
+    .message-card.fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* COUNTDOWN */
+    #countdown {
+      background: var(--black);
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    #countdown h2.section-title {
+      color: var(--white);
+    }
+
+    #countdown .section-label {
+      background: var(--pink);
+    }
+
+    .countdown-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .cd-box {
+      background: var(--pink);
+      border: 4px solid var(--white);
+      border-radius: 12px;
+      box-shadow: 6px 6px 0 var(--white);
+      padding: 24px 28px;
+      min-width: 120px;
+      text-align: center;
+    }
+
+    .cd-num {
+      display: block;
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -.02em;
+    }
+
+    .cd-label {
+      display: block;
+      font-size: .7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: var(--black);
+      margin-top: 6px;
+    }
+
+    .cd-target-info {
+      color: var(--gray-md);
+      font-size: .88rem;
+      margin-top: 24px;
+    }
+
+    /* CLOSING */
+    #closing {
+      background: var(--pink);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    #closing h2.section-title {
+      color: var(--white);
+      font-size: clamp(2rem, 6vw, 4rem);
+    }
+
+    #closing .section-label {
+      background: var(--white);
+      color: var(--pink);
+    }
+
+    .closing-sub {
+      color: var(--pink-lt);
+      font-size: 1.1rem;
+      max-width: 480px;
+      margin: 0 auto 36px;
+    }
+
+    #surprise-msg {
+      display: none;
+      margin-top: 48px;
+    }
+
+    #surprise-msg h3 {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 7vw, 5rem);
+      color: var(--white);
+      text-shadow: 4px 4px 0 #111;
+      animation: pulse 1.2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.05);
+      }
+    }
+
+    /* CONFETTI */
+    #confetti-canvas {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    /* MODAL */
+    #modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(17, 17, 17, .6);
+      z-index: 8000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    #modal-overlay.open {
+      display: flex;
+    }
+
+    #modal-box {
+      background: var(--white);
+      border: 5px solid var(--black);
+      border-radius: 16px;
+      box-shadow: 12px 12px 0 #111;
+      max-width: 560px;
+      width: 100%;
+      padding: 48px 44px;
+      position: relative;
+      animation: popIn .3s cubic-bezier(.17, .67, .41, 1.4);
+    }
+
+    @keyframes popIn {
+      from {
+        transform: scale(.8);
+        opacity: 0;
+      }
+
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    #modal-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 36px;
+      height: 36px;
+      background: var(--black);
+      color: var(--white);
+      border: none;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform .1s;
+    }
+
+    #modal-close:hover {
+      transform: rotate(90deg);
+    }
+
+    #modal-box h3 {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      color: var(--pink);
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    #modal-box p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--gray-dk);
+      text-align: center;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+      background: var(--white);
+      border: var(--border);
+      border-radius: 999px;
+      box-shadow: var(--shadow);
+      padding: 8px 20px;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    nav a {
+      font-size: .78rem;
+      font-weight: 800;
+      color: var(--black);
+      text-decoration: none;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      padding: 4px 2px;
+      transition: color .15s;
+    }
+
+    nav a:hover {
+      color: var(--pink);
+    }
+
+    .nav-heart {
+      color: var(--pink);
+      font-size: 1.1rem;
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--cream);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--pink);
+      border-radius: 4px;
+    }
+
+    @media(max-width:768px) {
+      .scrapbook-wall {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media(max-width:540px) {
+      nav {
+        gap: 8px;
+        padding: 8px 12px;
+      }
+
+      nav a {
+        font-size: .65rem;
+      }
+
+      .scrapbook-wall {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .message-card {
+        padding: 40px 20px;
+      }
+
+      #modal-box {
+        padding: 36px 20px;
+      }
+
+      section {
+        padding: 60px 16px;
+      }
+
+      .cd-box {
+        min-width: 80px;
+        padding: 14px 10px;
+      }
+
+      .cd-num {
+        font-size: 2.2rem;
+      }
+
+      .tl-dot {
+        flex: 0 0 52px;
+        height: 52px;
+      }
+
+      .timeline-line {
+        left: 26px;
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+      * {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="hearts-bg"></div>
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox">
+    <button id="lb-close">✕</button>
+    <img id="lb-img" src="" alt="" />
+    <div id="lb-caption"></div>
+    <div id="lb-nav">
+      <button id="lb-prev">← Prev</button>
+      <div id="lb-counter"></div>
+      <button id="lb-next">Next →</button>
+    </div>
+  </div>
+
+  <!-- MODAL -->
+  <div id="modal-overlay" role="dialog" aria-modal="true">
+    <div id="modal-box">
+      <button id="modal-close" aria-label="Tutup">✕</button>
+      <h3>Pesan Spesial 💌</h3>
+      <p>Happy Birthday, Sayang! 🎂✨
+
+        Hari ini genap 20 tahun sejak dunia kedatangan seseorang yang luar biasa. 🎂✨
+        <br><br>
+
+        And luckily, out of the billions of people on Earth, you chose to be with me.
+        Honestly, that was a pretty bold decision, but it's one that I'll always be grateful for. ❤️
+        <br><br>
+
+        Thank you for being yourself—someone who can make ordinary days feel special,
+        someone who always manages to make me smile, even when things aren't going well.
+        <br><br>
+
+        Keep being the amazing person you are, because honestly, I really love who you are right now.
+        You don't need to be perfect; just keep being you.
+        <br><br>
+
+        Semoga kamu lebih bahagia,
+        lebih banyak Senyum meskipun kadang banyak hal kaya tai tapi kita jangan kaya tai, dan nggak sedih terus.
+        istirahat juga kalo capek
+        <br><br>
+
+        And remember, you'll always be the apple of my eye. 🍎❤️
+      </p>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <span class="nav-heart">❤️</span>
+    <a href="#gallery">Foto</a>
+    <a href="#timeline">Cerita</a>
+    <a href="#message">Surat</a>
+    <a href="#countdown">Hitung</a>
+    <a href="#closing">Kejutan</a>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-doodles">
+      <div class="hero-deco doodle" style="top:8%;left:6%;font-size:3.5rem;animation-delay:0s;">🎀</div>
+      <div class="hero-deco doodle" style="top:12%;right:8%;font-size:2.5rem;animation-delay:.6s;">⭐</div>
+      <div class="hero-deco doodle" style="bottom:18%;left:10%;font-size:2.2rem;animation-delay:1.1s;">✨</div>
+      <div class="hero-deco doodle" style="bottom:22%;right:6%;font-size:3rem;animation-delay:.3s;">🎂</div>
+      <div class="hero-deco doodle" style="top:35%;left:2%;font-size:1.8rem;animation-delay:.9s;">💫</div>
+      <div class="hero-deco doodle" style="top:40%;right:3%;font-size:2rem;animation-delay:1.4s;">🌟</div>
+      <div class="deco-box"
+        style="width:80px;height:80px;background:#FFB3C1;top:10%;left:18%;transform:rotate(-12deg);opacity:.5;"></div>
+      <div class="deco-box"
+        style="width:52px;height:52px;background:#FF2D55;bottom:28%;right:18%;transform:rotate(10deg);opacity:.4;">
+      </div>
+      <div class="deco-box"
+        style="width:38px;height:38px;background:#111;bottom:14%;left:24%;transform:rotate(25deg);opacity:.12;"></div>
+    </div>
+    <div class="hero-box">
+      <div class="hero-eyebrow">🎉 22 - Juni - 2005</div>
+      <h1 class="hero-title">Happy Birthday,<br><span>Farras Afifah</span> ❤️</h1>
+      <p class="hero-sub">You are the apple of my eyes</p>
+      <button class="neo-btn" id="open-modal-btn" style="font-size:1.05rem;padding:16px 40px;">💌 Buka
+        Amplopnyaa</button>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <div class="section-label">📸 Kenangan Kita</div>
+    <h2 class="section-title" style="color:var(--white);">Foto-foto Kita<br>yang Paling Lucu</h2>
+
+    <!-- doodle accents inside gallery -->
+    <div class="gallery-doodle" style="top:8%;left:2%;animation-delay:.4s;">🎀</div>
+    <div class="gallery-doodle" style="top:15%;right:3%;animation-delay:1s;">✨</div>
+    <div class="gallery-doodle" style="bottom:10%;left:4%;animation-delay:.7s;">💕</div>
+    <div class="gallery-doodle" style="bottom:18%;right:2%;animation-delay:.2s;">🌸</div>
+
+    <div class="scrapbook-wall" id="photo-grid"></div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section id="timeline">
+    <div class="section-label">💕 Perjalanan Kita</div>
+    <h2 class="section-title">Cerita Kita<br>Dari Awal Hingga Kini</h2>
+    <div class="timeline-wrap">
+      <div class="timeline-line"></div>
+      <div id="tl-items"></div>
+    </div>
+  </section>
+
+  <!-- MESSAGE -->
+  <section id="message">
+    <div style="text-align:center;margin-bottom:8px;">
+      <div class="section-label">✉️ Surat Cinta</div>
+    </div>
+    <h2 class="section-title" style="text-align:center;">Kata kata hari ini</h2>
+    <div class="message-card neo-card fade-up" id="love-letter">
+      <span class="message-name">Untuk Afifah honey Bunnienya Acu,</span>
+      <div class="message-body">Tulisan ini dibuat sebagai bukti bahwa sampai sekarang kamu masih belum bosen sama aku.
+        Achievement kamu selama di enep ya cuma ini.
+
+        Happy birthday Yaaaa!
+
+        Terima kasih yaa karna udah bertahan dari segala kelakuan aku, dari kelakuan aku yang gajelas, autis, sampai
+        yang bikin kamu beneran marah sama aku.
+
+        Kamu itu bener-bener spesial buat aku. Bukan cuma gara-gara kamu BAIK, cantik, dan Seru, tapi juga karena entah
+        bagaimana kamu masih memilih aku setiap harinya. Padahal pilihan lain di dunia ini banyak banget.
+
+        Semoga di umur kamu yang ke 20 ini, kamu makin bahagia, makin Lucu, makin IMOET, dan semua wishlist kamu satu
+        per satu bisa terwujud. Kecuali kalo wishlist-nya pacaran sama homo-homoan kamu itu, BIG NO YAA!!
+
+        Aku mungkin nggak terlalu romantis, nggak peka, dan kadang balas chat kamu lama banget hehehe. Tapi satu hal
+        yang pasti, aku bener-bener beruntung banget punya kamu.
+
+        Happy Birthday Yaaa Poyy ❤️</div>
+      <div class="message-sign">— Dari Lubuk Hati Terdalam Palung Mariana, <em>Razqa</em></div>
+    </div>
+  </section>
+
+  <!-- COUNTDOWN -->
+  <section id="countdown">
+    <div class="section-label">⏳ Countdown</div>
+    <h2 class="section-title">Menuju Hari Spesialmu<br>Berikutnya</h2>
+    <div class="countdown-row">
+      <div class="cd-box"><span class="cd-num" id="cd-days">00</span><span class="cd-label">Hari</span></div>
+      <div class="cd-box"><span class="cd-num" id="cd-hours">00</span><span class="cd-label">Jam</span></div>
+      <div class="cd-box"><span class="cd-num" id="cd-mins">00</span><span class="cd-label">Menit</span></div>
+      <div class="cd-box"><span class="cd-num" id="cd-secs">00</span><span class="cd-label">Detik</span></div>
+    </div>
+    <p class="cd-target-info" id="cd-info">✨ - ✨ - ✨ - ✨</p>
+  </section>
+
+  <!-- CLOSING -->
+  <section id="closing">
+    <div class="section-label">🎊 Kejutan</div>
+    <h2 class="section-title">Satu Hal Lagi<br>Untukmu ❤️</h2>
+    <p class="closing-sub">Pencet Dong tombolnya</p>
+    <button class="neo-btn white" id="surprise-btn" style="font-size:1.1rem;padding:18px 44px;">🎊 Teken dongg
+      ❤️</button>
+    <div id="surprise-msg">
+      <h3>I Love You Poyy ❤️</h3>
+    </div>
+  </section>
+
+  <script>
+    // ===== PHOTOS DATA (embedded) =====
+    const PHOTOS = [
+
+      { src: "image/2.jpeg", label: "Imooetts 👀", sticker: "🌸" },
+      { src: "image/12.jpeg", label: "Duo Trioo 🔥", sticker: "⭐" },
+      { src: "image/4.jpeg", label: "Lucuu 🌸", sticker: "💖" },
+      { src: "image/15.jpeg", label: "Hehehe ☀️", sticker: "✨" },
+      { src: "image/9.jpeg", label: "My kisah 💝", sticker: "🎀" },
+      { src: "image/10.jpeg", label: " ❤️❤️❤️", sticker: "❤️" },
+      { src: "image/5.jpeg", label: "Anak Baik 💕", sticker: "💕" },
+      { src: "image/6.jpeg", label: "Bini Gweh ✨", sticker: "🌟" },
+      { src: "image/13.jpeg", label: "Kenangan 🌟", sticker: "😍" },
+      { src: "image/3.jpeg", label: "Terlalu lucu 😂", sticker: "🎉" },
+      { src: "image/21.jpeg", label: "Favorit banget 🎀", sticker: "💝" },
+      { src: "image/8.jpeg", label: "Kecee Abiees 🔥", sticker: "💗" },
+      { src: "image/20.jpeg", label: "Gak mau pisah 💝", sticker: "🌈" },
+      { src: "image/23.jpeg", label: "My person 🥺", sticker: "🥺" },
+      { src: "image/22.jpeg", label: "My mine nya acu 💞", sticker: "💞" },
+      { src: "image/19.jpeg", label: "Forever & ever 🌙", sticker: "🌙" },
+    ];
+
+    function placeholderImg(num, label) {
+      const safeLabel = String(label || "").replace(/[<>&]/g, "");
+      const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500">
+        <rect width="500" height="500" fill="#FFE4EC"/>
+        <rect x="18" y="18" width="464" height="464" rx="14" fill="none" stroke="#FF2D55" stroke-width="5" stroke-dasharray="16 12"/>
+        <text x="250" y="215" font-size="78" text-anchor="middle">📷</text>
+        <text x="250" y="280" font-family="Trebuchet MS, Segoe UI, sans-serif" font-size="24" font-weight="700" fill="#111111" text-anchor="middle">Foto #${num}</text>
+        <text x="250" y="312" font-family="Trebuchet MS, Segoe UI, sans-serif" font-size="16" fill="#888888" text-anchor="middle">${safeLabel}</text>
+      </svg>`;
+      return "data:image/svg+xml," + encodeURIComponent(svg);
+    }
+
+    // rotation presets for playful scrapbook look
+    const ROTS = [-4, -2, -3, 2, 3, 1, -1, 4, -3, 2, -2, 3, 1, -4, 4, -1];
+    const TAPE_ROTS = ['-3deg', '5deg', '-6deg', '4deg', '-2deg', '7deg', '-5deg', '3deg', '-4deg', '6deg', '-3deg', '2deg', '5deg', '-6deg', '4deg', '-2deg'];
+    const BG_ACCENTS = ['#FFF5F7', '#FFB3C1', '#FFF0F3', '#FFE4EC', '#FFF5F7', '#FFB3C1', '#FFF0F3', '#FFE4EC',
+      '#FFF5F7', '#FFB3C1', '#FFF0F3', '#FFE4EC', '#FFF5F7', '#FFB3C1', '#FFF0F3', '#FFE4EC'];
+
+    // ===== GALLERY BUILD =====
+    let lbIndex = 0;
+    (function () {
+      const grid = document.getElementById('photo-grid');
+      PHOTOS.forEach((p, i) => {
+        const wrap = document.createElement('div');
+        wrap.className = 'polaroid';
+        wrap.style.setProperty('--tape-rot', TAPE_ROTS[i] || '0deg');
+        wrap.dataset.index = i;
+        wrap.innerHTML = `
+      <div class="polaroid-inner" style="--rot:${ROTS[i] || 0}deg;background:${BG_ACCENTS[i]}">
+        <span class="polaroid-num">#${String(i + 1).padStart(2, '0')}</span>
+        <img class="polaroid-img" src="${p.src || placeholderImg(i + 1, p.label)}" alt="${p.label}" loading="lazy"/>
+        <div class="polaroid-caption">${p.label}</div>
+      </div>
+      <span class="polaroid-sticker" style="--sd:${(i * 0.17).toFixed(2)}s">${p.sticker}</span>`;
+        wrap.addEventListener('click', (e) => {
+          openLightbox(i);
+          // Heart burst
+          const burst = document.createElement('span');
+          burst.className = 'heart-burst';
+          burst.textContent = '❤️';
+          burst.style.left = (e.offsetX || 20) + 'px';
+          burst.style.top = (e.offsetY || 20) + 'px';
+          wrap.appendChild(burst);
+          setTimeout(() => burst.remove(), 800);
+        });
+        grid.appendChild(wrap);
+      });
+    })();
+
+    // ===== LIGHTBOX =====
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lb-img');
+    const lbCap = document.getElementById('lb-caption');
+    const lbCnt = document.getElementById('lb-counter');
+    function openLightbox(i) {
+      lbIndex = i;
+      lbImg.src = PHOTOS[i].src || placeholderImg(i + 1, PHOTOS[i].label);
+      lbCap.textContent = PHOTOS[i].label;
+      lbCnt.textContent = `${i + 1} / ${PHOTOS.length}`;
+      lb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() { lb.classList.remove('open'); document.body.style.overflow = ''; }
+    document.getElementById('lb-close').addEventListener('click', closeLightbox);
+    document.getElementById('lb-prev').addEventListener('click', () => openLightbox((lbIndex - 1 + PHOTOS.length) % PHOTOS.length));
+    document.getElementById('lb-next').addEventListener('click', () => openLightbox((lbIndex + 1) % PHOTOS.length));
+    lb.addEventListener('click', e => { if (e.target === lb) closeLightbox(); });
+    document.addEventListener('keydown', e => {
+      if (!lb.classList.contains('open')) return;
+      if (e.key === 'ArrowLeft') openLightbox((lbIndex - 1 + PHOTOS.length) % PHOTOS.length);
+      if (e.key === 'ArrowRight') openLightbox((lbIndex + 1) % PHOTOS.length);
+      if (e.key === 'Escape') closeLightbox();
+    });
+
+    // ===== FLOATING HEARTS =====
+    (function () {
+      const bg = document.getElementById('hearts-bg');
+      const emojis = ['❤️', '💕', '💗', '💖', '💝', '💞', '🌸', '✨'];
+      for (let i = 0; i < 22; i++) {
+        const h = document.createElement('span');
+        h.className = 'fheart';
+        h.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+        h.style.left = Math.random() * 100 + '%';
+        h.style.fontSize = (0.8 + Math.random() * 1.4) + 'rem';
+        const dur = 9 + Math.random() * 12;
+        h.style.animationDuration = dur + 's';
+        h.style.animationDelay = -(Math.random() * dur) + 's';
+        bg.appendChild(h);
+      }
+    })();
+
+    // ===== TIMELINE =====
+    const timeline = [
+      { date: "PhotoBoot with keluarga cemara", emoji: "👀", title: "First Attention", text: "Aku mulai ngerasa ada yang beda dari kamu waktu kamu ngobrol sama yang lain, kaya kamu ga terlalu ngelibatin emosi kamu buat beberapa hal" },
+      { date: "VolleyBall", emoji: "🏐", title: "First Memory", text: "Aku bener-bener seneng banget pas tau kamu nonton latihan volley waktu itu, aku inget banget kamu ngacungin jari tengah kamu ke aku waktu di boncengin fawwas sehabis latihan volley, terus kita makan baso bareng-bareng sambil kamu cerita tentang first date kamu sama kepin" },
+      { date: "Before the Trip", emoji: "💌", title: "Burst of Feeling", text: "Waktu rumah sipa jadi tempat penitipan motor aku yang rusak, disitu pertama kalinya aku tau kalo kamu juga suka sama aku. malem itu aku gabisa tidur, aku bener-bener terus kepikiran soal kamu malem itu padahal besoknya aku sama yang lain bakal pergi ke curug subuh-subuh. aku bener-bener bahagia banget" },
+      { date: "Our First Ride", emoji: "🛵", title: "Awkward", text: "Pertama kalinya kita naik motor berdua, awalnya aku takut banget kita bakal canggung, tapi kita lumayan bisa nyairin suasana dengan topik asdos kamu yang matanya genit itu" },
+      { date: "First Date", emoji: "🎄", title: "The Conversation", text: "Ini waktu kita pertama kalinya ngobrol berdua tentang hubungan kita and thats the first time i'm holding someone's hand" },
+      { date: "No Preparation", emoji: "😅", title: "Stupid Things", text: "Waktu perjalanan pulang kerumah kamu, aku pernah nembak kamu dengan persiapan yang nol banget HAHAHA, disitu aku juga masih bingung tembakan aku diterima atau enggak" },
+      { date: "Mainnn yukkk", emoji: "🤣", title: "Funny", text: "Aku lupa ini main yang keberapa tapi aku inget waktu itu pertama kalinya aku bercanda sama kamu tanpa aku paksa-paksain lucunya, aku bener-bener jadi diri aku dan respon kamu juga buat aku seneng banget, beban aku semuanya ilang waktu itu" },
+      { date: "Happy And Sad", emoji: "🥺", title: "Appologies", text: "Aku tau banget pasti hubungan kita gak bener-bener kayak apa yang kamu ekspetasiin. pasti banyak banget hal yang engga kamu suka dari aku, tapi aku mohon banget ke kamu buat bisa kasih tau ke aku hal-hal yang gak kamu suka dari aku dan bakal aku coba rubah hal itu." },
+      { date: "Sekarang", emoji: "🥂", title: "The Journey", text: "Sebenernya masih banyak yang mau aku tulis disini cuma aku ngantuk banget hehehe, yang aku harapin kedepannya semoga hubungan kita tenang tapi juga tetep seru (Biar kamu Gabosen)" },
+    ];
+    (function () {
+      const container = document.getElementById('tl-items');
+      timeline.forEach((item, i) => {
+        const el = document.createElement('div');
+        el.className = 'tl-item';
+        el.style.transitionDelay = (i * 0.08) + 's';
+        el.innerHTML = `<div class="tl-dot">${item.emoji}</div><div class="tl-card neo-card"><div class="tl-date">${item.date}</div><h3>${item.title}</h3><p>${item.text}</p></div>`;
+        container.appendChild(el);
+      });
+      observe('.tl-item');
+    })();
+
+    // ===== INTERSECTION OBSERVER =====
+    function observe(sel) {
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+      }, { threshold: 0.15 });
+      document.querySelectorAll(sel).forEach(el => obs.observe(el));
+    }
+    observe('.fade-up');
+
+    // ===== COUNTDOWN =====
+    (function () {
+      const birthday = "2005-06-22";
+      function next() {
+        const now = new Date(), b = new Date(birthday);
+        const n = new Date(now.getFullYear(), b.getMonth(), b.getDate());
+        if (n <= now) n.setFullYear(now.getFullYear() + 1);
+        return n;
+      }
+      function pad(n) { return String(n).padStart(2, '0'); }
+      function tick() {
+        const diff = next() - new Date();
+        if (diff <= 0) { document.getElementById('cd-info').textContent = '🎉 Selamat Ulang Tahun!';['days', 'hours', 'mins', 'secs'].forEach(id => document.getElementById('cd-' + id).textContent = '00'); return; }
+        document.getElementById('cd-days').textContent = pad(Math.floor(diff / 86400000));
+        document.getElementById('cd-hours').textContent = pad(Math.floor((diff % 86400000) / 3600000));
+        document.getElementById('cd-mins').textContent = pad(Math.floor((diff % 3600000) / 60000));
+        document.getElementById('cd-secs').textContent = pad(Math.floor((diff % 60000) / 1000));
+      }
+      tick(); setInterval(tick, 1000);
+    })();
+
+    // ===== MODAL =====
+    const overlay = document.getElementById('modal-overlay');
+    document.getElementById('open-modal-btn').addEventListener('click', () => overlay.classList.add('open'));
+    document.getElementById('modal-close').addEventListener('click', () => overlay.classList.remove('open'));
+    overlay.addEventListener('click', e => { if (e.target === overlay) overlay.classList.remove('open'); });
+
+    // ===== CONFETTI =====
+    const canvas = document.getElementById('confetti-canvas');
+    const ctx = canvas.getContext('2d');
+    let pieces = [], animating = false;
+    function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+    window.addEventListener('resize', resizeCanvas); resizeCanvas();
+    function launchConfetti() {
+      const colors = ['#FF2D55', '#FFB3C1', '#FFF5F7', '#FFFFFF', '#111111', '#FFD700'];
+      const shapes = ['❤️', '💕', '🌸', '⭐', '✨', '🎉'];
+      for (let i = 0; i < 180; i++) {
+        pieces.push({ x: Math.random() * canvas.width, y: -20 - Math.random() * 200, vx: (Math.random() - .5) * 6, vy: 2 + Math.random() * 5, rot: Math.random() * 360, rotV: (Math.random() - .5) * 8, size: 10 + Math.random() * 18, color: colors[Math.floor(Math.random() * colors.length)], shape: shapes[Math.floor(Math.random() * shapes.length)], useEmoji: Math.random() > .4, opacity: 1 });
+      }
+      if (!animating) animLoop();
+    }
+    function animLoop() {
+      animating = true; ctx.clearRect(0, 0, canvas.width, canvas.height);
+      pieces = pieces.filter(p => p.y < canvas.height + 60 && p.opacity > .02);
+      pieces.forEach(p => {
+        p.x += p.vx; p.y += p.vy; p.rot += p.rotV; p.vy *= 1.01;
+        if (p.y > canvas.height * .7) p.opacity *= .97;
+        ctx.save(); ctx.globalAlpha = p.opacity; ctx.translate(p.x, p.y); ctx.rotate(p.rot * Math.PI / 180);
+        if (p.useEmoji) { ctx.font = p.size + 'px serif'; ctx.fillText(p.shape, -p.size / 2, p.size / 2); }
+        else { ctx.fillStyle = p.color; ctx.fillRect(-p.size / 2, -p.size / 4, p.size, p.size / 2); }
+        ctx.restore();
+      });
+      if (pieces.length > 0) requestAnimationFrame(animLoop); else animating = false;
+    }
+    document.getElementById('surprise-btn').addEventListener('click', function () {
+      launchConfetti(); setTimeout(launchConfetti, 800); setTimeout(launchConfetti, 1600);
+      const msg = document.getElementById('surprise-msg');
+      msg.style.display = 'block'; msg.style.opacity = '0'; msg.style.transform = 'scale(.5)'; msg.style.transition = 'all .6s cubic-bezier(.17,.67,.41,1.4)';
+      setTimeout(() => { msg.style.opacity = '1'; msg.style.transform = 'scale(1)'; }, 100);
+      this.textContent = '🎊 Aku Mencintaimu! ❤️'; this.style.background = '#111'; this.style.color = '#fff';
+    });
+  </script>
+</body>
+
+</html>
